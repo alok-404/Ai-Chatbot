@@ -1,0 +1,24 @@
+/* Scrollbar styling for messages container */
+.messages-container {
+  overflow-y: auto;
+
+  /* Webkit browsers (Chrome, Edge, Safari) */
+  &::-webkit-scrollbar {
+    width: 6px; /* slim */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3); /* dark semi-transparent track */
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #06b6d4; /* cyan color */
+    border-radius: 10px;
+    border: 1px solid #000; /* optional border for style */
+  }
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #06b6d4 rgba(0, 0, 0, 0.3);
+}
