@@ -7,9 +7,15 @@ const generateResponse = require('./src/services/ai.service')
 const httpServer = createServer(app);
 const io = new Server(httpServer, { 
   
-  cors:{
-    origin: "http://localhost:5173"
+const io = new Server(httpServer, {
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "https://gupshupai.vercel.app"
+    ],
+    methods: ["GET", "POST"]
   }
+});
 
 
  });
