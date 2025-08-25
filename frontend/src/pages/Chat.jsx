@@ -26,7 +26,9 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    const socketInstance = io("https://ai-chatbot-qj3i.onrender.com");
+    const socketInstance = io("https://ai-chatbot-qj3i.onrender.com" , {
+  transports: ["polling"]
+});
     setSocket(socketInstance);
 
     socketInstance.on("ai-message-response", (msg) => {

@@ -11,7 +11,7 @@ const Mainroutes = () => {
         <div className="text-white p-4 flex flex-col items-center justify-center min-h-screen">
           <img
             className='h-32 w-32 mb-4'
-            src="/src/assets/giphy.gif"
+            src="../assets/giphy.gif"
             alt="loading"
           />
           Loading...

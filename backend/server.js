@@ -6,19 +6,18 @@ const generateResponse = require('./src/services/ai.service')
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, { 
-  
-const io = new Server(httpServer, {
   cors: {
     origin: [
       "http://localhost:5173",
       "https://gupshupai.vercel.app"
     ],
-    methods: ["GET", "POST"]
-  }
+    methods: ["GET", "POST"],
+    credentials: true
+  },
+  transports: [ "polling"]
 });
 
 
- });
 
 // Short Term Memory
 let chatHistory = [];
@@ -49,11 +48,16 @@ io.on("connection", (socket) => {
     });
 
     // client ko bhejo
+    console.log(response);
+
     socket.emit("ai-message-response", { response });
+    
     
   });
 });
 
-httpServer.listen(3000, () => {
-  console.log("Server is running on Port 3000");
+const PORT = process.env.PORT || 3000;
+httpServer.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
