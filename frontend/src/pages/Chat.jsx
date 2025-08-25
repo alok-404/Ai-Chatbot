@@ -46,7 +46,7 @@ const Chat = () => {
     };
   }, []);
 
-  // Scroll to bottom whenever messages change
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -82,7 +82,7 @@ const Chat = () => {
 
         {loading && (
           <div className="text-gray-400 italic animate-pulse">
-            <img className="h-10 w-10 mb-4" src="/src/assets/giphy.gif" alt="loading" />
+            <img className="h-10 w-10 mb-4" src="/giphy.gif" alt="loading" />
           </div>
         )}
 
